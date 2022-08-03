@@ -12,10 +12,10 @@ import java.util.List;
 
 @Controller
 public class ResponseController {
-    //List<Client> AllMessages = new ArrayList<>();
     @MessageMapping("/addLog ")
     @SendTo("/topic/response")
-    public Response response(Client message){
+    public Response response(Client message) throws Exception{
+        Thread.sleep(1000);
         return  new Response("Your message has been accepted. It's {"+ HtmlUtils.htmlEscape(message.getMessage()) + "} !");
     }
 }
