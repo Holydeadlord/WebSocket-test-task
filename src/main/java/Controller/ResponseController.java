@@ -16,6 +16,6 @@ public class ResponseController {
     @SendTo("/topic/response")
     public Response response(Client message) throws Exception{
         Thread.sleep(1000);
-        return  new Response("Your message has been accepted. It's {"+ HtmlUtils.htmlEscape(message.getMessage()) + "} !");
+        return  new Response("Some text"+ HtmlUtils.htmlEscape(message.getMessage()) + " !");
     }
 }
